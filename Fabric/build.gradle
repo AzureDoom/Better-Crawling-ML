@@ -73,8 +73,8 @@ publishing {
   publications {
     maven(MavenPublication) {
       groupId = project.group
-      artifactId = project.version
-      version = project.fabric_name
+      artifactId = project.fabric_name
+      version = project.version
       from components.java
     }
   }

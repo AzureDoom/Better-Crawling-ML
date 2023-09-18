@@ -103,8 +103,8 @@ publishing {
   publications {
     maven(MavenPublication) {
       groupId = project.group
-      artifactId = project.version
-      version = project.neo_name
+      artifactId = project.neo_name
+      version = project.version
       from components.java
     }
   }
