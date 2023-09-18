@@ -3,7 +3,7 @@
     "id": "bettercrawling",
     "version": "${version}",
 	"name" : "Better Crawling",
-	"description" : "Striped down Spiders 2.0",
+	"description" : "A stripped-down Nyfs Spiders for other mobs!",
     "authors": [
       "AzureDoom"
     ],
