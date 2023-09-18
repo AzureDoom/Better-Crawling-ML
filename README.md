@@ -1,5 +1,5 @@
 # Better-Crawling-ML
-A striped down Nyfs Spiders for other mobs!
+A stripped-down Nyfs Spiders for other mobs!
 
 ```gradle
 repositories {
