@@ -1,0 +1,25 @@
+modLoader="javafml" 
+loaderVersion="[47,)" 
+license="CC0-1.0"
+[[mods]] 
+modId="bettercrawling"
+version="${file.jarVersion}" 
+displayName="Better Crawling" 
+logoFile="icon.png"
+authors="AzureDoom"
+description='''
+Striped down Spiders 2.0 
+'''
+[[dependencies.rename]] 
+    modId="forge" 
+    mandatory=true 
+    versionRange="[47,)"
+    ordering="NONE"
+    side="BOTH"
+[[dependencies.rename]]
+    modId="minecraft"
+    mandatory=true
+    versionRange="[1.20.1,1.20.2)"
+    ordering="NONE"
+    side="BOTH"
+

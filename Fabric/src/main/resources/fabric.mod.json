@@ -1,0 +1,39 @@
+{
+    "schemaVersion": 1,
+    "id": "bettercrawling",
+    "version": "${version}",
+	"name" : "Better Crawling",
+	"description" : "Striped down Spiders 2.0",
+    "authors": [
+      "AzureDoom"
+    ],
+    "contact": {
+      "homepage": "https://fabricmc.net/",
+      "sources": "https://github.com/AzureDoom/Azure-MultiLoader-Template"
+    },
+    "license": "CC0-1.0",
+    "icon": "icon.png",
+    "environment": "*",
+    "entrypoints": {
+      "main": [
+        "mod.azuredoom.bettercrawling.BetterCrawlingMod"
+      ]
+    },
+    "mixins": [
+      "bettercrawling.mixins.json",
+      "bettercrawling.fabric.mixins.json"
+    ],
+    "depends": {
+      "fabricloader": ">=0.14.21",
+      "fabric": "*",
+      "minecraft": "1.20.1",
+      "java": ">=17"
+    },
+    "accessWidener": "bettercrawling_common.accesswidener",
+  "custom" : {
+    "modmenu" : {
+      "badges" : [ "library" ]
+    }
+  }
+  }
+  
