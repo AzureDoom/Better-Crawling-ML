@@ -16,14 +16,11 @@ import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.phys.Vec3;
 
 /**
- * @author Boston Vanseghi
+ * Credit to: https://github.com/Nyfaria/NyfsSpiders/tree/1.20.x
  */
 @Mixin(LivingEntity.class)
 public abstract class LivingEntityMixin implements ILivingEntityLookAtHook, ILivingEntityDataManagerHook, ILivingEntityTravelHook, ILivingEntityJumpHook {
 
-	/*
-	 * Credit to: https://github.com/Nyfaria/NyfsSpiders/tree/1.20.x
-	 */
 	@ModifyVariable(method = "lookAt", at = @At("HEAD"), ordinal = 0)
 	private Vec3 onLookAtModify(Vec3 vec, Anchor anchor, Vec3 vec2) {
 		return this.onLookAt(anchor, vec);

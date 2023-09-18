@@ -6,7 +6,7 @@ import net.minecraft.core.BlockPos;
 import net.minecraft.world.entity.MoverType;
 import net.minecraft.world.phys.Vec3;
 
-/*
+/**
  * Credit to: https://github.com/Nyfaria/NyfsSpiders/tree/1.20.x
  */
 public interface IEntityMovementHook {

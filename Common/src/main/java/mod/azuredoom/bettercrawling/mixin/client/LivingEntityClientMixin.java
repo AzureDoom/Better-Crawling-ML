@@ -7,7 +7,7 @@ import org.spongepowered.asm.mixin.injection.ModifyVariable;
 import mod.azuredoom.bettercrawling.interfaces.ILivingEntityRotationHook;
 import net.minecraft.world.entity.LivingEntity;
 
-/*
+/**
  * Credit to: https://github.com/Nyfaria/NyfsSpiders/tree/1.20.x
  */
 @Mixin(LivingEntity.class)

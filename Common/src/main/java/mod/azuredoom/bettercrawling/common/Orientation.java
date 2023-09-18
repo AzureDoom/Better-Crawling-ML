@@ -5,7 +5,7 @@ import org.apache.commons.lang3.tuple.Pair;
 import net.minecraft.util.Mth;
 import net.minecraft.world.phys.Vec3;
 
-/*
+/**
  * Credit to: https://github.com/Nyfaria/NyfsSpiders/tree/1.20.x
  */
 public record Orientation(Vec3 normal, Vec3 localZ, Vec3 localY, Vec3 localX, float componentZ, float componentY, float componentX, float yaw, float pitch) {

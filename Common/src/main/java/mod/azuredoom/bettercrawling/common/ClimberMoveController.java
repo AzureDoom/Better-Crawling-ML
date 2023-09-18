@@ -12,7 +12,7 @@ import net.minecraft.world.level.pathfinder.BlockPathTypes;
 import net.minecraft.world.phys.AABB;
 import net.minecraft.world.phys.Vec3;
 
-/*
+/**
  * Credit to: https://github.com/Nyfaria/NyfsSpiders/tree/1.20.x
  */
 public class ClimberMoveController<T extends Mob & IClimberEntity> extends MoveControl {

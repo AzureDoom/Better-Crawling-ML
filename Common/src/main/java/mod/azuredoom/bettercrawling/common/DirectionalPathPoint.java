@@ -7,7 +7,7 @@ import org.jetbrains.annotations.Nullable;
 import net.minecraft.core.Direction;
 import net.minecraft.world.level.pathfinder.Node;
 
-/*
+/**
  * Credit to: https://github.com/Nyfaria/NyfsSpiders/tree/1.20.x
  */
 public class DirectionalPathPoint extends Node {

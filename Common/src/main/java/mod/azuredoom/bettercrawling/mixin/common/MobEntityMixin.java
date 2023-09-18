@@ -12,7 +12,7 @@ import mod.azuredoom.bettercrawling.interfaces.IMobEntityTickHook;
 import net.minecraft.world.entity.Mob;
 
 /**
- * @author Boston Vanseghi
+ * Credit to: https://github.com/Nyfaria/NyfsSpiders/tree/1.20.x
  */
 @Mixin(Mob.class)
 public abstract class MobEntityMixin implements IMobEntityLivingTickHook, IMobEntityTickHook {

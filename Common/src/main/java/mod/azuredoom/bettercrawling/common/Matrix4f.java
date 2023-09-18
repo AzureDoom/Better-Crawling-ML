@@ -3,7 +3,7 @@ package mod.azuredoom.bettercrawling.common;
 import net.minecraft.util.Mth;
 import net.minecraft.world.phys.Vec3;
 
-/*
+/**
  * Credit to: https://github.com/Nyfaria/NyfsSpiders/tree/1.20.x
  */
 public class Matrix4f {

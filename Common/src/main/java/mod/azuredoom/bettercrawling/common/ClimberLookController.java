@@ -9,7 +9,7 @@ import net.minecraft.world.entity.Mob;
 import net.minecraft.world.entity.ai.control.LookControl;
 import net.minecraft.world.phys.Vec3;
 
-/*
+/**
  * Credit to: https://github.com/Nyfaria/NyfsSpiders/tree/1.20.x
  */
 public class ClimberLookController<T extends Mob & IClimberEntity> extends LookControl {

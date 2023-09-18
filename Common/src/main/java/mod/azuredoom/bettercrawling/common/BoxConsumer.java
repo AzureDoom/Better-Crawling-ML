@@ -4,7 +4,7 @@ import it.unimi.dsi.fastutil.floats.FloatArrays;
 import net.minecraft.world.phys.Vec3;
 import net.minecraft.world.phys.shapes.Shapes;
 
-/*
+/**
  * Credit to: https://github.com/Nyfaria/NyfsSpiders/tree/1.20.x
  */
 public class BoxConsumer implements Shapes.DoubleLineConsumer {
