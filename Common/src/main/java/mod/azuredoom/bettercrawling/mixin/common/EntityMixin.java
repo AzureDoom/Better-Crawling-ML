@@ -23,21 +23,6 @@ import net.minecraft.world.phys.Vec3;
 @Mixin(Entity.class)
 public abstract class EntityMixin implements IEntityMovementHook, IEntityReadWriteHook {
 
-	@Shadow
-	private EntityDimensions dimensions;
-
-//	@Inject(method = "<init>", at = @At("RETURN"))
-//	private void setDimensions(EntityType entityType, Level level, CallbackInfo ci) {
-//		final var entityDimensions = Constants.onEntitySize((Entity) (Object) this);
-//		entityDimensions.ifPresent(value -> this.dimensions = value);
-//	}
-//
-//	@Inject(method = "refreshDimensions", at = @At(value = "INVOKE_ASSIGN", target = "Lnet/minecraft/world/entity/Entity;getDimensions(Lnet/minecraft/world/entity/Pose;)Lnet/minecraft/world/entity/EntityDimensions;"))
-//	private void setDimensionsNew(CallbackInfo ci) {
-//		final var entityDimensions = Constants.onEntitySize((Entity) (Object) this);
-//		entityDimensions.ifPresent(value -> this.dimensions = value);
-//	}
-
 	@Inject(method = "move", at = @At("HEAD"), cancellable = true)
 	private void onMovePre(MoverType type, Vec3 pos, CallbackInfo ci) {
 		if (this.onMove(type, pos, true))
