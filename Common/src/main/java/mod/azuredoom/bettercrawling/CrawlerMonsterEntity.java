@@ -72,7 +72,7 @@ public abstract class CrawlerMonsterEntity extends Monster implements IClimberEn
 	private static final UUID SLOW_FALLING_ID = UUID.fromString("A5B6CF2A-2F7C-31EF-9022-7C3E7D5E6ABA");
 	public static final AttributeModifier SLOW_FALLING = new AttributeModifier(SLOW_FALLING_ID, "Slow falling acceleration reduction", -0.07, AttributeModifier.Operation.ADDITION);
 	private static final UUID FOLLOW_RANGE_INCREASE_ID = UUID.fromString("9e815957-3a8e-4b65-afbc-eba39d2a06b4");
-	private static final AttributeModifier FOLLOW_RANGE_INCREASE = new AttributeModifier(FOLLOW_RANGE_INCREASE_ID, " Gigeresque follow range increase", 8.0D, AttributeModifier.Operation.ADDITION);
+	private static final AttributeModifier FOLLOW_RANGE_INCREASE = new AttributeModifier(FOLLOW_RANGE_INCREASE_ID, " Better Crawling follow range increase", 8.0D, AttributeModifier.Operation.ADDITION);
 	private static final EntityDataAccessor<Float> MOVEMENT_TARGET_X;
 	private static final EntityDataAccessor<Float> MOVEMENT_TARGET_Y;
 	private static final EntityDataAccessor<Float> MOVEMENT_TARGET_Z;
@@ -169,16 +169,16 @@ public abstract class CrawlerMonsterEntity extends Monster implements IClimberEn
 
 	@Override
 	public void onWrite(CompoundTag nbt) {
-		nbt.putDouble("gigeresque.AttachmentNormalX", this.attachmentNormal.x);
-		nbt.putDouble("gigeresque.AttachmentNormalY", this.attachmentNormal.y);
-		nbt.putDouble("gigeresque.AttachmentNormalZ", this.attachmentNormal.z);
-		nbt.putInt("gigeresque.AttachedTicks", this.attachedTicks);
+		nbt.putDouble("bettercrawling.AttachmentNormalX", this.attachmentNormal.x);
+		nbt.putDouble("bettercrawling.AttachmentNormalY", this.attachmentNormal.y);
+		nbt.putDouble("bettercrawling.AttachmentNormalZ", this.attachmentNormal.z);
+		nbt.putInt("bettercrawling.AttachedTicks", this.attachedTicks);
 	}
 
 	@Override
 	public void onRead(CompoundTag nbt) {
-		this.prevAttachmentNormal = this.attachmentNormal = new Vec3(nbt.getDouble("gigeresque.AttachmentNormalX"), nbt.getDouble("gigeresque.AttachmentNormalY"), nbt.getDouble("gigeresque.AttachmentNormalZ"));
-		this.attachedTicks = nbt.getInt("gigeresque.AttachedTicks");
+		this.prevAttachmentNormal = this.attachmentNormal = new Vec3(nbt.getDouble("bettercrawling.AttachmentNormalX"), nbt.getDouble("bettercrawling.AttachmentNormalY"), nbt.getDouble("bettercrawling.AttachmentNormalZ"));
+		this.attachedTicks = nbt.getInt("bettercrawling.AttachedTicks");
 		this.orientation = this.calculateOrientation(1);
 	}
 
