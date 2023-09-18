@@ -9,9 +9,9 @@ repositories {
 
 dependencies {
     //Fabric or Quilt
-    modImplementation "mod.azuredoom.bettercrawling:1.0.1:better-crawling-fabric-1.20.1"
+    modImplementation "mod.azuredoom.bettercrawling:better-crawling-fabric-1.20.1:1.0.2"
 		
     //NeoForge or Forge
-    implementation fg.deobf("mod.azuredoom.bettercrawling:1.0.1:better-crawling-neoforge-1.20.1")
+    implementation fg.deobf("mod.azuredoom.bettercrawling:better-crawling-neoforge-1.20.1:1.0.2")
 }
 ```
