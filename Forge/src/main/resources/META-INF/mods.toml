@@ -8,7 +8,7 @@ displayName="Better Crawling"
 logoFile="icon.png"
 authors="AzureDoom"
 description='''
-Striped down Spiders 2.0 
+A stripped-down Nyfs Spiders for other mobs!
 '''
 [[dependencies.rename]] 
     modId="forge" 
