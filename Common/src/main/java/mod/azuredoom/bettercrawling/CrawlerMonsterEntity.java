@@ -30,7 +30,6 @@ import mod.azuredoom.bettercrawling.interfaces.ILivingEntityLookAtHook;
 import mod.azuredoom.bettercrawling.interfaces.ILivingEntityRotationHook;
 import mod.azuredoom.bettercrawling.interfaces.ILivingEntityTravelHook;
 import mod.azuredoom.bettercrawling.interfaces.IMobEntityLivingTickHook;
-import mod.azuredoom.bettercrawling.interfaces.IMobEntityRegisterGoalsHook;
 import mod.azuredoom.bettercrawling.interfaces.IMobEntityTickHook;
 import net.minecraft.commands.arguments.EntityAnchorArgument.Anchor;
 import net.minecraft.core.BlockPos;
@@ -68,7 +67,7 @@ import net.minecraft.world.phys.Vec3;
 import net.minecraft.world.phys.shapes.Shapes;
 import net.minecraft.world.phys.shapes.VoxelShape;
 
-public abstract class CrawlerMonsterEntity extends Monster implements IClimberEntity, IMobEntityRegisterGoalsHook, IMobEntityLivingTickHook, ILivingEntityLookAtHook, IMobEntityTickHook, ILivingEntityRotationHook, ILivingEntityDataManagerHook, ILivingEntityTravelHook, IEntityMovementHook, IEntityReadWriteHook, ILivingEntityJumpHook {
+public abstract class CrawlerMonsterEntity extends Monster implements IClimberEntity, IMobEntityLivingTickHook, ILivingEntityLookAtHook, IMobEntityTickHook, ILivingEntityRotationHook, ILivingEntityDataManagerHook, ILivingEntityTravelHook, IEntityMovementHook, IEntityReadWriteHook, ILivingEntityJumpHook {
 	private static final UUID SLOW_FALLING_ID = UUID.fromString("A5B6CF2A-2F7C-31EF-9022-7C3E7D5E6ABA");
 	public static final AttributeModifier SLOW_FALLING = new AttributeModifier(SLOW_FALLING_ID, "Slow falling acceleration reduction", -0.07, AttributeModifier.Operation.ADDITION);
 	private static final UUID FOLLOW_RANGE_INCREASE_ID = UUID.fromString("9e815957-3a8e-4b65-afbc-eba39d2a06b4");

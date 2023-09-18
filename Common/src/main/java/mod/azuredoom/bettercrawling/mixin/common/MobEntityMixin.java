@@ -8,7 +8,6 @@ import org.spongepowered.asm.mixin.injection.Redirect;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
 import mod.azuredoom.bettercrawling.interfaces.IMobEntityLivingTickHook;
-import mod.azuredoom.bettercrawling.interfaces.IMobEntityRegisterGoalsHook;
 import mod.azuredoom.bettercrawling.interfaces.IMobEntityTickHook;
 import net.minecraft.world.entity.Mob;
 
@@ -16,10 +15,8 @@ import net.minecraft.world.entity.Mob;
  * @author Boston Vanseghi
  */
 @Mixin(Mob.class)
-public abstract class MobEntityMixin implements IMobEntityLivingTickHook, IMobEntityTickHook, IMobEntityRegisterGoalsHook {
-	/*
-	 * Credit to: https://github.com/Nyfaria/NyfsSpiders/tree/1.20.x
-	 */
+public abstract class MobEntityMixin implements IMobEntityLivingTickHook, IMobEntityTickHook {
+
 	@Inject(method = "aiStep", at = @At("HEAD"))
 	private void onLivingTick(CallbackInfo ci) {
 		this.onLivingTick();
@@ -36,21 +33,5 @@ public abstract class MobEntityMixin implements IMobEntityLivingTickHook, IMobEn
 
 	@Override
 	public void onTick() {
-	}
-
-	@Shadow(prefix = "shadow$")
-	private void shadow$registerGoals() {
-	}
-
-	@Redirect(method = "<init>*", at = @At(value = "INVOKE", target = "Lnet/minecraft/world/entity/Mob;registerGoals()V"))
-	private void onRegisterGoals(Mob _this) {
-		this.shadow$registerGoals();
-
-		if (_this == (Object) this)
-			this.onRegisterGoals();
-	}
-
-	@Override
-	public void onRegisterGoals() {
 	}
 }
