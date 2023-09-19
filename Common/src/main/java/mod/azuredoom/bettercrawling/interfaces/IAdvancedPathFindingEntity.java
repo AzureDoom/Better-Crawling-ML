@@ -36,7 +36,7 @@ public interface IAdvancedPathFindingEntity {
 	 * @return
 	 */
 	public default int getMaxStuckCheckTicks() {
-		return 40;
+		return 20;
 	}
 
 	/**
