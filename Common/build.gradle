@@ -15,6 +15,8 @@ javadoc.enabled(false)
 
 dependencies {
     compileOnly "org.spongepowered:mixin:0.8.5"
+    implementation("com.github.llamalad7.mixinextras:mixinextras-common:0.2.0-rc.3")
+    annotationProcessor("com.github.llamalad7.mixinextras:mixinextras-common:0.2.0-rc.3")
 }
 
 processResources {

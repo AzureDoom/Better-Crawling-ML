@@ -66,6 +66,7 @@ subprojects {
             name = "Progwml6 maven"
             url = "https://dvs1.progwml6.com/files/maven/"
         }
+        maven { url 'https://jitpack.io' }
         maven { url "https://maven.architectury.dev/" }
         maven { url 'https://dl.cloudsmith.io/public/azuredoom-mods/azurelib/maven/' }
 
