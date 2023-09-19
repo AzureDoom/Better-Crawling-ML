@@ -1,5 +1,9 @@
 package mod.azuredoom.bettercrawling.mixin.common;
 
+import com.llamalad7.mixinextras.injector.wrapoperation.Operation;
+import com.llamalad7.mixinextras.injector.wrapoperation.WrapOperation;
+import mod.azuredoom.bettercrawling.platform.Services;
+import mod.azuredoom.bettercrawling.platform.services.IPlatformHelper;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;
 import org.spongepowered.asm.mixin.injection.At;
@@ -20,7 +24,7 @@ import net.minecraft.world.phys.Vec3;
 /**
  * Credit to: https://github.com/Nyfaria/NyfsSpiders/tree/1.20.x
  */
-@Mixin(Entity.class)
+@Mixin(value = Entity.class, priority = 700)
 public abstract class EntityMixin implements IEntityMovementHook, IEntityReadWriteHook {
 
 	@Inject(method = "move", at = @At("HEAD"), cancellable = true)
@@ -51,8 +55,8 @@ public abstract class EntityMixin implements IEntityMovementHook, IEntityReadWri
 		return null;
 	}
 
-	@Redirect(method = "move", at = @At(value = "INVOKE", target = "Lnet/minecraft/world/entity/Entity$MovementEmission;emitsAnything()Z"))
-	public boolean bop(Entity.MovementEmission instance) {
+	@WrapOperation(method = "move", at = @At(value = "INVOKE", target = "Lnet/minecraft/world/entity/Entity$MovementEmission;emitsAnything()Z"))
+	public boolean bop(Entity.MovementEmission instance, Operation<Boolean> original) {
 		return this.getAdjustedCanTriggerWalking(instance.emitsAnything());
 	}
 
