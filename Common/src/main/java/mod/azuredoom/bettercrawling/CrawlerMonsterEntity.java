@@ -169,6 +169,21 @@ public abstract class CrawlerMonsterEntity extends Monster implements IClimberEn
 	}
 
 	@Override
+	public void defineSynchedData() {
+		super.defineSynchedData();
+		if (this.shouldTrackPathingTargets()) {
+			this.entityData.define(MOVEMENT_TARGET_X, 0.0f);
+			this.entityData.define(MOVEMENT_TARGET_Y, 0.0f);
+			this.entityData.define(MOVEMENT_TARGET_Z, 0.0f);
+			for (EntityDataAccessor<Optional<BlockPos>> pathingTarget : PATHING_TARGETS)
+				this.entityData.define(pathingTarget, Optional.empty());
+			for (EntityDataAccessor<Direction> pathingSide : PATHING_SIDES)
+				this.entityData.define(pathingSide, Direction.DOWN);
+		}
+		this.entityData.define(ROTATION_BODY, new Rotations(0, 0, 0));
+	}
+
+	@Override
 	public void onWrite(CompoundTag nbt) {
 		nbt.putDouble("bettercrawling.AttachmentNormalX", this.attachmentNormal.x);
 		nbt.putDouble("bettercrawling.AttachmentNormalY", this.attachmentNormal.y);
