@@ -124,7 +124,9 @@ public abstract class CrawlerMonsterEntity extends Monster implements IClimberEn
 
 	public CrawlerMonsterEntity(EntityType<? extends Monster> entityType, Level level) {
 		super(entityType, level);
-		this.setMaxUpStep(1.5f);
+		this.setMaxUpStep(0.1f);
+		this.orientation = this.calculateOrientation(1);
+		this.groundDirection = this.getGroundDirection();
 		this.moveControl = new ClimberMoveController<>(this);
 		this.lookControl = new ClimberLookController<>(this);
 		this.jumpControl = new ClimberJumpController<>(this);
