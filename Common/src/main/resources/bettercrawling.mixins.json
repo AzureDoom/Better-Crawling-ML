@@ -9,7 +9,8 @@
 		"common.MobEntityMixin"
 	],
 	"client": [
-		"client.LivingEntityClientMixin"
+		"client.LivingEntityClientMixin",
+		"client.MixinLivingRenderer"
 	],
 	"injectors": {
 		"defaultRequire": 1
