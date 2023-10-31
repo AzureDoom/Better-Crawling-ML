@@ -2,7 +2,7 @@ subprojects {
 
     apply plugin: 'java'
     apply from: '../gradle/minify_jsons.gradle'
-    
+
     java.toolchain.languageVersion = JavaLanguageVersion.of(17)
     java.withSourcesJar()
     java.withJavadocJar()
@@ -87,18 +87,17 @@ subprojects {
     }
 
     task assembleSubProjects() {
-                var props = rootProject.getProperties()
-                var fileName = "${props.get("mod_name")}-${project.getName().toLowerCase()}-${minecraft_version}-${props.get("version")}.jar"
-                var sourceFileName = "${props.get("mod_name")}-${project.getName().toLowerCase()}-${minecraft_version}-${props.get("version")}-sources.jar"
-                project.file("build/libs/${fileName}").renameTo(rootProject.file("buildOutput/${fileName}"))
-                project.file("build/libs/${sourceFileName}").renameTo(rootProject.file("buildOutput/${sourceFileName}"))
-            }
-
+        var props = rootProject.getProperties()
+        var fileName = "${props.get("mod_name")}-${project.getName().toLowerCase()}-${minecraft_version}-${props.get("version")}.jar"
+        var sourceFileName = "${props.get("mod_name")}-${project.getName().toLowerCase()}-${minecraft_version}-${props.get("version")}-sources.jar"
+        project.file("build/libs/${fileName}").renameTo(rootProject.file("buildOutput/${fileName}"))
+        project.file("build/libs/${sourceFileName}").renameTo(rootProject.file("buildOutput/${sourceFileName}"))
     }
 
+}
 
 
-task assembleSubProjects(){
+task assembleSubProjects() {
     doFirst {
         subprojects.forEach(subProject -> {
             var props = rootProject.getProperties()

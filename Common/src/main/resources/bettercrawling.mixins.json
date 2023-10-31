@@ -1,18 +1,18 @@
 {
-	"required": true,
-	"package": "mod.azuredoom.bettercrawling.mixin",
-    "refmap": "bettercrawling.refmap.json",
-	"compatibilityLevel": "JAVA_17",
-	"mixins": [
-		"common.EntityMixin",
-		"common.LivingEntityMixin",
-		"common.MobEntityMixin"
-	],
-	"client": [
-		"client.LivingEntityClientMixin",
-		"client.MixinLivingRenderer"
-	],
-	"injectors": {
-		"defaultRequire": 1
-	}
+  "required": true,
+  "package": "mod.azuredoom.bettercrawling.mixin",
+  "refmap": "bettercrawling.refmap.json",
+  "compatibilityLevel": "JAVA_17",
+  "mixins": [
+    "common.EntityMixin",
+    "common.LivingEntityMixin",
+    "common.MobEntityMixin"
+  ],
+  "client": [
+    "client.LivingEntityClientMixin",
+    "client.MixinLivingRenderer"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
 }

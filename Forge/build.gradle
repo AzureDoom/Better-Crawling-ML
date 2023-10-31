@@ -94,22 +94,22 @@ mixin {
 jar.finalizedBy('reobfJar')
 
 publishing {
-  repositories {
-    maven {
-      name = "azurelib"
-      url = "https://libs.azuredoom.com:4443/mods"
-      credentials(PasswordCredentials)
-      authentication {
-        basic(BasicAuthentication)
-      }
+    repositories {
+        maven {
+            name = "azurelib"
+            url = "https://libs.azuredoom.com:4443/mods"
+            credentials(PasswordCredentials)
+            authentication {
+                basic(BasicAuthentication)
+            }
+        }
     }
-  }
-  publications {
-    maven(MavenPublication) {
-      groupId = project.group
-      artifactId = project.neo_name
-      version = project.version
-      from components.java
+    publications {
+        maven(MavenPublication) {
+            groupId = project.group
+            artifactId = project.neo_name
+            version = project.version
+            from components.java
+        }
     }
-  }
 }

@@ -1,15 +1,12 @@
 package mod.azuredoom.bettercrawling.mixin.common;
 
-import org.spongepowered.asm.mixin.Mixin;
-import org.spongepowered.asm.mixin.Shadow;
-import org.spongepowered.asm.mixin.injection.At;
-import org.spongepowered.asm.mixin.injection.Inject;
-import org.spongepowered.asm.mixin.injection.Redirect;
-import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
-
 import mod.azuredoom.bettercrawling.interfaces.IMobEntityLivingTickHook;
 import mod.azuredoom.bettercrawling.interfaces.IMobEntityTickHook;
 import net.minecraft.world.entity.Mob;
+import org.spongepowered.asm.mixin.Mixin;
+import org.spongepowered.asm.mixin.injection.At;
+import org.spongepowered.asm.mixin.injection.Inject;
+import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
 /**
  * Credit to: https://github.com/Nyfaria/NyfsSpiders/tree/1.20.x

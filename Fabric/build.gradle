@@ -1,9 +1,9 @@
 buildscript {
     repositories {
-    	maven { url  = 'https://plugins.gradle.org/m2/' }
-	gradlePluginPortal()
-	mavenCentral()
-	jcenter()
+        maven { url = 'https://plugins.gradle.org/m2/' }
+        gradlePluginPortal()
+        mavenCentral()
+        jcenter()
     }
 }
 
@@ -20,7 +20,7 @@ dependencies {
     mappings loom.officialMojangMappings()
     modImplementation "net.fabricmc:fabric-loader:${fabric_loader_version}"
     modImplementation "net.fabricmc.fabric-api:fabric-api:${fabric_version}"
-    implementation group: 'com.google.code.findbugs', name: 'jsr305', version: '3.0.1'
+    compileOnly group: 'com.google.code.findbugs', name: 'jsr305', version: '3.0.1'
     compileOnly project(":Common")
     include(implementation(annotationProcessor("io.github.llamalad7:mixinextras-fabric:0.2.0-rc.3")))
 }
@@ -61,22 +61,22 @@ tasks.withType(JavaCompile) {
 }
 
 publishing {
-  repositories {
-    maven {
-      name = "azurelib"
-      url = "https://libs.azuredoom.com:4443/mods"
-      credentials(PasswordCredentials)
-      authentication {
-        basic(BasicAuthentication)
-      }
+    repositories {
+        maven {
+            name = "azurelib"
+            url = "https://libs.azuredoom.com:4443/mods"
+            credentials(PasswordCredentials)
+            authentication {
+                basic(BasicAuthentication)
+            }
+        }
     }
-  }
-  publications {
-    maven(MavenPublication) {
-      groupId = project.group
-      artifactId = project.fabric_name
-      version = project.version
-      from components.java
+    publications {
+        maven(MavenPublication) {
+            groupId = project.group
+            artifactId = project.fabric_name
+            version = project.version
+            from components.java
+        }
     }
-  }
 }
